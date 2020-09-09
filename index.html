@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <!-- prevent favicon request -->
+    <link href="data:;base64,iVBORw0KGgo=" rel="icon" />
+    <title>React project without cra</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div id="root"></div>
+   <!--
+     Uncomment if you need this
+   <script
+     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+     crossorigin="anonymous"></script>
+   <script
+     src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+     crossorigin="anonymous"></script>
+   <script
+     src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+     crossorigin="anonymous"></script>
+   -->
+ 
+   <!-- babel is required in order to parse JSX  IMPORTANT-->
+   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+ 
+   <!--
+     Load React.
+     Note: when deploying, replace "development.js" with "production.min.js".
+   -->
+   <script
+     src="https://unpkg.com/react@16/umd/react.development.js"
+     crossorigin></script>
+   <script
+     src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+     crossorigin></script>
+
+   <!--
+     Load React-Bootstrap
+   -->
+   <script
+     src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
+     crossorigin></script>
+
+   <!--
+        Load our React component.
+        IMPORTANT
+ 
+        Without the type="text/babel" this doesn't work.
+ 
+        Something like this  will work:
+        <script type="text/babel" src="./js/script.js"></script> 
+ 
+        But, you will get a validation(html) error:
+        A "script" element with a "src" attribute must not have a
+        "type" attributewhose value is anything other than the empty string,
+       a JavaScript MIME type, or "module".
+   -->
+ 
+   <script type="text/babel">
+ /*
+  *  Don't forget to use the  ReactBootstrap object
+  *  "all components exported on the window.ReactBootstrap object" (react-bootstrap docs)
+  */
+
+   var Container = ReactBootstrap.Container;
+   var Row       = ReactBootstrap.Row;
+   var Col       = ReactBootstrap.Col;
+   
+
+   function Content() {
+     return (
+       <Container fluid>
+          <Row>
+            <Col>1  of 12</Col>
+            <Col>2  of 12</Col>
+            <Col>3  of 12</Col>
+            <Col>4  of 12</Col>
+            <Col>5  of 12</Col>
+            <Col>6  of 12</Col>
+            <Col>7  of 12</Col>
+            <Col>8  of 12</Col>
+            <Col>9  of 12</Col>
+            <Col>10 of 12</Col>
+            <Col>11 of 12</Col>
+            <Col>12 of 12</Col>
+          </Row>
+       </Container>
+    ); 
+   }
+
+   ReactDOM.render(
+    <Content />,
+    document.getElementById('root')
+   );
+  </script> 
+
+</body>
+</html>
